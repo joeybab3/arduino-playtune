@@ -481,7 +481,9 @@ void tune_playnote (byte chan, byte note) {
   byte prescalarbits = 0b001;
   unsigned int frequency2; /* frequency times 2 */
   unsigned long ocr;
-
+  digitalWrite(9-chan, HIGH);
+  Serial.println("lit: "+(9-chan));
+  
 #if DBUG
   Serial.print ("Play at ");
   Serial.print(score_cursor - score_start, HEX);
@@ -629,7 +631,7 @@ void tune_playnote (byte chan, byte note) {
 
 void tune_stopnote (byte chan) {
   byte timer_num;
-
+  digitalWrite(9-chan, LOW);
 #if DBUG
   Serial.print ("Stop note ");
   Serial.println(chan, DEC);
