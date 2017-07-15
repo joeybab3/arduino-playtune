@@ -977,9 +977,7 @@ void setup() {
   pt.tune_initchan (49);
   pt.tune_initchan (51);
   pt.tune_initchan (53);
-  
-  strip.Begin();
-  strip.Show();
+
 #define DBUG 0
 #if DBUG
   Serial.begin(9600);
