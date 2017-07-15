@@ -389,7 +389,7 @@ RgbColor green(0, 255, 0);
 RgbColor blue(0, 0, 255);
 RgbColor yellow(255, 255, 0);
 RgbColor pink(0, 255, 255);
-RgbColor white(colorSaturation);
+RgbColor white(255);
 RgbColor black(0);
 RgbColor colors[6] = {red,green,blue,yellow,pink,white};
 
