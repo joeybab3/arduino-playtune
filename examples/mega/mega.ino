@@ -8,12 +8,6 @@
 // T. Wasiluk, 28 May 2016; moved to appropriate library examples subdirectory
 //
 //**************************************************
-#include <NeoPixelBus.h>
-
-const uint16_t PixelCount = 127; // this example assumes 4 pixels, making it smaller will cause a failure
-
-// three element pixels, in different order and speeds
-NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount,5);
 #include <Playtune.h>
 
 //------------------------------------------------
