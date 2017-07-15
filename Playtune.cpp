@@ -383,7 +383,6 @@ const uint16_t PixelCount = 127; // this example assumes 4 pixels, making it sma
 
 NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount,5);
 strip.Begin();
-strip.Show();
 RgbColor red(255, 0, 0);
 RgbColor green(0, 255, 0);
 RgbColor blue(0, 0, 255);
