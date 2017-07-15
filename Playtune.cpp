@@ -378,6 +378,17 @@ void tune_playnote (byte chan, byte note);
 void tune_stopnote (byte chan);
 void tune_stepscore (void);
 
+RgbColor red(255, 0, 0);
+RgbColor green(0, 255, 0);
+RgbColor blue(0, 0, 255);
+RgbColor yellow(255, 255, 0);
+RgbColor pink(0, 255, 255);
+RgbColor white(colorSaturation);
+RgbColor black(0);
+RgbColor colors[6] = {red,green,blue,yellow,pink,white};
+
+byte lastnote[6] = {};
+
 #if TESLA_COIL
 void teslacoil_rising_edge(byte timernum);
 byte teslacoil_checknote(byte note);
@@ -481,7 +492,8 @@ void tune_playnote (byte chan, byte note) {
   byte prescalarbits = 0b001;
   unsigned int frequency2; /* frequency times 2 */
   unsigned long ocr;
-  digitalWrite(9-chan, HIGH);
+     lastnote[chan] = note;
+  strip.SetPixelColor(note, colors[chan]);
   Serial.println("lit: "+(9-chan));
   
 #if DBUG
@@ -631,7 +643,7 @@ void tune_playnote (byte chan, byte note) {
 
 void tune_stopnote (byte chan) {
   byte timer_num;
-  digitalWrite(9-chan, LOW);
+  strip.SetPixelColor(lastnote[chan], black);
 #if DBUG
   Serial.print ("Stop note ");
   Serial.println(chan, DEC);
