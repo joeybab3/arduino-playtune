@@ -253,6 +253,7 @@
 
 #include <Arduino.h>
 #include "Playtune.h"
+#include <NeoPixelBus.h>
 
 #ifndef DBUG
 #define DBUG 0          // debugging?
@@ -377,6 +378,10 @@ const unsigned int PROGMEM tune_frequencies2_PGM[128] =
 void tune_playnote (byte chan, byte note);
 void tune_stopnote (byte chan);
 void tune_stepscore (void);
+
+const uint16_t PixelCount = 127; // this example assumes 4 pixels, making it smaller will cause a failure
+
+NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount,5);
 
 RgbColor red(255, 0, 0);
 RgbColor green(0, 255, 0);
