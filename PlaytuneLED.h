@@ -21,12 +21,13 @@
 *     - Fixed include file names for Arduino 1.6 on Linux.
 */
 
-#ifndef Playtune_h
-#define Playtune_h
+#ifndef PlaytuneLED_h
+#define PlaytuneLED_h
 
 #include <Arduino.h>
+#include <NeoPixelBus.h>
 
-class Playtune
+class PlaytuneLED
 {
 public:
  void tune_initchan (byte pin);			// assign a timer to an output pin
@@ -35,6 +36,7 @@ public:
  void tune_stopscore (void);			// stop playing the score
  void tune_delay (unsigned msec);		// delay in milliseconds
  void tune_stopchans (void);			// stop all timers
+ PlaytuneLED();
 };
 
 #endif

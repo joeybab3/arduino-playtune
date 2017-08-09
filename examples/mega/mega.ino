@@ -8,7 +8,7 @@
 // T. Wasiluk, 28 May 2016; moved to appropriate library examples subdirectory
 //
 //**************************************************
-#include <Playtune.h>
+#include <PlaytuneLED.h>
 
 //------------------------------------------------
 //   scores are put in program space memory
@@ -962,7 +962,7 @@ const byte PROGMEM score2 [] = {
 // This score contains 10033 bytes, and 6 tone generators are used.
 // 2 notes had to be skipped.
 
-Playtune pt;
+PlaytuneLED pt;
 
 void setup() {
 
